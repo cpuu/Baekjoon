@@ -1,7 +1,7 @@
 /*
-    2×n 타일링 : https://www.acmicpc.net/problem/11726
+    2×n 타일링 2 : https://www.acmicpc.net/problem/11727
 
-    $ g++ 11726.cpp -o 11726
+    $ g++ 11727.cpp -o 11727
 */
 
 #include <iostream>
@@ -22,7 +22,7 @@ int main()
 
     for (int i=2; i<=number; i++)
     {
-        d[i] = (d[i-1] + d[i-2]) % 10007;
+        d[i] = (d[i-1] + 2*d[i-2]) % 10007;
     }
 
     cout << d[number] << "\n";
