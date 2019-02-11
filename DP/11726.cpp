@@ -20,9 +20,9 @@ int main()
     d[0] = 1;
     d[1] = 1;
 
-    for (int i=2; i<=number; i++)
+    for (int i = 2; i <= number; i++)
     {
-        d[i] = (d[i-1] + d[i-2]) % 10007;
+        d[i] = (d[i - 1] + d[i - 2]) % 10007;
     }
 
     cout << d[number] << "\n";
