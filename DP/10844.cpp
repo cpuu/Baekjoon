@@ -16,30 +16,30 @@ int main()
     cin >> n;
 
     d[1][0] = 0;
-    for(int j=1;j<10;j++)
+    for (int j = 1; j < 10; j++)
     {
         d[1][j] = 1;
     }
 
-    for(int i=2;i<=n;i++)
+    for (int i = 2; i <= n; i++)
     {
-        for(int j=0;j<10;j++)
+        for (int j = 0; j < 10; j++)
         {
             d[i][j] = 0;
-            if(j != 0)
+            if (j != 0)
             {
-                d[i][j] += d[i-1][j-1];
+                d[i][j] += d[i - 1][j - 1];
             }
-            if(j != 9)
+            if (j != 9)
             {
-                d[i][j] += d[i-1][j+1];
+                d[i][j] += d[i - 1][j + 1];
             }
             d[i][j] %= 1000000000;
         }
     }
 
     result = 0;
-    for(int j=0;j<10;j++)
+    for (int j = 0; j < 10; j++)
     {
         result += d[n][j];
     }
